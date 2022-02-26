@@ -19,7 +19,6 @@ exports.postInsurance = (req, res, next) => {
     if (err) {
       console.log(err);
     } else {
-      console.log("Successfully added the new insurance");
       res.sendStatus(200)
     }
   });
