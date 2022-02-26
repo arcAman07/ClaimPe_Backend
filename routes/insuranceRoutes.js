@@ -6,8 +6,10 @@ const signUpcontroller = require("../controllers/insuranceController");
 
 // Post Request to store user Details
 
-router.post("/signUp", signUpcontroller.postUser);
+router.post("/insurance", signUpcontroller.postInsurance);
 
-router.get("/signUp", signUpcontroller.getAllUsers);
+router.get("/insurance", signUpcontroller.getAllInsurance);
+
+router.get("/insurance/:id", signUpcontroller.getInsurance);
 
 module.exports = router;
