@@ -21,8 +21,4 @@ router.patch("/insurance/:id", insuranceController.patchInsurance);
 
 router.delete("/insurance/:id", insuranceController.deleteInsurance);
 
-router.get("/payement", payementController.getAllPayement);
-
-router.post("/payement", payementController.postPayement);
-
 module.exports = router;

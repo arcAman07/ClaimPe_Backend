@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const payementSchema = require("../models/payement");
 const Payement = mongoose.model("Payement", payementSchema);
-exports.postInsurance = (req, res, next) => {
+exports.postPayement = (req, res, next) => {
   const newPayement = new Payement({
     transactions: [
         {
