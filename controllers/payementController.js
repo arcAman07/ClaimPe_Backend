@@ -8,9 +8,8 @@ exports.postPayement = (req, res, next) => {
     sender: req.body.sender,
     amount: req.body.amount,
   }
-  transaction = []
   const newPayement = new Payement({
-    transactions: transaction.push(payement)
+    transactions: payement,
         });
   newPayement.save((err) => {
     if (err) {
