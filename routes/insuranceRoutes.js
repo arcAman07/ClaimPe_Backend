@@ -6,6 +6,10 @@ const signUpcontroller = require("../controllers/insuranceController");
 
 // Post Request to store user Details
 
+router.get("/",(req,res,next)=>{
+    res.send("Welcome to Medical Insurance API")
+    })
+
 router.post("/insurance", signUpcontroller.postInsurance);
 
 router.get("/insurance", signUpcontroller.getAllInsurance);

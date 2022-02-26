@@ -7,6 +7,7 @@ const PORT = process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 const insuranceRoutes = require("./routes/insuranceRoutes");
+const payementRoutes = require("./routes/payementRoutes");
 const MONGO_URI = require("./config/config");
 const uri = MONGO_URI;
 mongoose.connect(uri, {
@@ -16,6 +17,6 @@ mongoose.connect(uri, {
 
   .catch((err) => console.error(err))
 
-
 app.use(insuranceRoutes);
+app.use(payementRoutes);
 app.listen(PORT, () => console.log("The server is running"));
