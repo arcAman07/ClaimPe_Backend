@@ -9,12 +9,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 // Update date schema
 const payementSchema = new Schema({
-    transactions:[
-        {
-        receiver: { type: "string", required: true },
-  sender: { type: "string", required: true },
-  amount: { type: "Number", required: true },
-        }]
+  transactions:[],
 });
 
 module.exports = payementSchema;
