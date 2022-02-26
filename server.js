@@ -7,7 +7,7 @@ const PORT = process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser.json())
 
-const userRoutes = require("./routes/userRoutes");
+const insuranceRoutes = require("./routes/insuranceRoutes");
 
 // Testing it on local database on Robo-3T
 
@@ -16,6 +16,6 @@ mongoose.connect("mongodb://localhost:27017/visionDB", {
   useUnifiedTopology: true,
 });
 
-app.use(userRoutes);
+app.use(insuranceRoutes);
 
 app.listen(PORT, () => console.log("The server is running"));
