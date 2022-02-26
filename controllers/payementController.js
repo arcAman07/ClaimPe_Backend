@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const payementSchema = require("../models/payement");
 const Payement = mongoose.model("Payement", payementSchema);
+transaction = []
 exports.postPayement = (req, res, next) => {
 
   const payement = {
@@ -8,8 +9,9 @@ exports.postPayement = (req, res, next) => {
     sender: req.body.sender,
     amount: req.body.amount,
   }
+  transaction.push(payement)
   const newPayement = new Payement({
-    transactions: payement,
+    transactions: transaction,
         });
   newPayement.save((err) => {
     if (err) {
