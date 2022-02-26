@@ -9,9 +9,9 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 // Update date schema
 const insuranceSchema = new Schema({
-  insuranceType: { type: "string", required: true },
-  date: { type: "string", required: true },
-  status: { type: "string", required: true },
+  insuranceType: { type: "string" },
+  date: { type: "string" },
+  status: { type: "string" },
   amount: { type: "Number", required: true },
 });
 
