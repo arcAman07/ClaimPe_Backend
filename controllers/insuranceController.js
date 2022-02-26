@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const insuranceSchema = require("../models/insurance");
-const Insurance = mongoose.model("User", insuranceSchema);
+const Insurance = mongoose.model("Insurance", insuranceSchema);
 
 exports.postInsurance = (req, res, next) => {
   const newInsurance = new Insurance({
@@ -35,9 +35,9 @@ exports.getAllInsurance = (req, res, next) => {
   Insurance.find((err, results) => {
     if (!err) {
       res.send(results);
+      res.sendStatus(200)
     } else {
       console.log(err);
-      res.send(err);
     }
   });
 };
