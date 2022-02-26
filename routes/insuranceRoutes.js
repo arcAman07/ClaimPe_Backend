@@ -14,4 +14,6 @@ router.get("/insurance/:id", signUpcontroller.getInsurance);
 
 router.patch("/insurance/:id", signUpcontroller.patchInsurance);
 
+router.delete("/insurance/:id", signUpcontroller.deleteInsurance);
+
 module.exports = router;
