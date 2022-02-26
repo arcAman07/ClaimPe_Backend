@@ -2,8 +2,9 @@ const express = require("express");
 
 const router = express.Router();
 
-const signUpcontroller = require("../controllers/insuranceController");
+const insuranceController = require("../controllers/insuranceController");
 
+const payementController = require("../controllers/payementController");
 // Post Request to store user Details
 
 router.get("/",(req,res,next)=>{
@@ -19,5 +20,9 @@ router.get("/insurance/:id", insuranceController.getInsurance);
 router.patch("/insurance/:id", insuranceController.patchInsurance);
 
 router.delete("/insurance/:id", insuranceController.deleteInsurance);
+
+router.get("/payement", payementController.getAllPayement);
+
+router.post("/payement", payementController.postPayement);
 
 module.exports = router;
