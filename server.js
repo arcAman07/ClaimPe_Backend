@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const MONGO_URI = require("../config/config");
+// const MONGO_URI = require("../config/config");
 const app = express();
 const PORT = process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,5 +16,4 @@ mongoose.connect("mongodb://localhost:27017/visionDB", {
 });
 
 app.use(insuranceRoutes);
-
 app.listen(PORT, () => console.log("The server is running"));
