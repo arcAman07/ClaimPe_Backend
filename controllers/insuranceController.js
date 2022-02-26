@@ -1,12 +1,17 @@
 const mongoose = require("mongoose");
 const insuranceSchema = require("../models/insurance");
 const Insurance = mongoose.model("Insurance", insuranceSchema);
-
+const d = new Date();
+let day = d.getDate();
+let month = d.getMonth();
+let year = d.getFullYear();
+let date = `${day}/${month}/${year}`;
+console.log(day)
 exports.postInsurance = (req, res, next) => {
   const newInsurance = new Insurance({
-    insuranceType: req.body.insuranceType,
-    date: req.body.date,
-    status: req.body.status,
+    insuranceType: "Health",
+    date: date,
+    status: "Ongoing",
     amount: req.body.amount,
   });
 
@@ -34,6 +39,16 @@ exports.getAllInsurance = (req, res, next) => {
   Insurance.find((err, results) => {
     if (!err) {
       res.send(results);
+    } else {
+      console.log(err);
+    }
+  });
+};
+
+exports.patchInsurance = (req, res, next) => {
+  Insurance.updateOne({ _id: req.params.id }, { $set: req.body }, (err) => {
+    if (!err) {
+      res.sendStatus(200)
     } else {
       console.log(err);
     }
