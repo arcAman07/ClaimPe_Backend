@@ -12,7 +12,7 @@ exports.postInsurance = (req, res, next) => {
     insuranceType: "Health",
     date: date,
     status: "Ongoing",
-    amount: req.body.amount,
+    amount: req.body.IPAnnualReimbursementAmt,
   });
 
   newInsurance.save((err) => {
