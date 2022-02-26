@@ -24,7 +24,6 @@ exports.getInsurance = (req, res, next) => {
   Insurance.findOne({ _id: req.params.id }, (err, insurance) => {
     if (!err) {
       res.send(insurance);
-      res.sendStatus(200)
     } else {
       console.log(err);
     }
@@ -35,7 +34,6 @@ exports.getAllInsurance = (req, res, next) => {
   Insurance.find((err, results) => {
     if (!err) {
       res.send(results);
-      res.sendStatus(200)
     } else {
       console.log(err);
     }
