@@ -12,14 +12,13 @@ exports.postInsurance = (req, res, next) => {
     insuranceType: "Health",
     date: date,
     status: "Ongoing",
-    amount: req.body.IPAnnualReimbursementAmt,
+    amount: req.body.amount,
   });
 
   newInsurance.save((err) => {
     if (err) {
       console.log(err);
     } else {
-      console.log("Successfully added the new insurance");
       res.sendStatus(200)
     }
   });
