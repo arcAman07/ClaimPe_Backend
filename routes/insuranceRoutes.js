@@ -10,7 +10,7 @@ router.get("/",(req,res,next)=>{
     res.send("Welcome to Medical Insurance API")
     })
 
-router.post("/insurance", signUpcontroller.postInsurance);
+router.post("/insurance", insuranceController.postInsurance);
 
 router.get("/insurance", signUpcontroller.getAllInsurance);
 
