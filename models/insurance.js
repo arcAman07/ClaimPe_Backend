@@ -7,7 +7,7 @@ const p = path.join(
 
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-// Some changes need to be made in the schema ( make in unique and regex will be applied )
+// Update date schema
 const insuranceSchema = new Schema({
   insuranceType: { type: "string", required: true },
   date: { type: "string", required: true },
