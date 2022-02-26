@@ -54,3 +54,13 @@ exports.patchInsurance = (req, res, next) => {
     }
   });
 };
+
+exports.deleteInsurance = (req, res, next) => {
+  Insurance.deleteOne({ _id: req.params.id }, (err) => {
+    if (!err) {
+        res.sendStatus(200)
+    } else {
+      console.log(err);
+    }
+  });
+};
