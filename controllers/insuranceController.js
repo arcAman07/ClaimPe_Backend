@@ -13,6 +13,8 @@ exports.postInsurance = (req, res, next) => {
     date: date,
     status: "Ongoing",
     amount: req.body.amount,
+    receiver: req.body.receiver,
+    sender: req.body.sender,
   });
 
   newInsurance.save((err) => {

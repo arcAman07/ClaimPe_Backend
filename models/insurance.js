@@ -13,6 +13,8 @@ const insuranceSchema = new Schema({
   date: { type: "string"},
   status: { type: "string"},
   amount: { type: "Number", required: true },
+  receiver: { type: "string", required: true },
+  sender: { type: "string", required: true },
 });
 
 module.exports = insuranceSchema;
